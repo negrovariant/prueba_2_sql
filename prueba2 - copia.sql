@@ -15,6 +15,4 @@ Select from INSCRITOS where fecha INT =< '2021-01-01';
     from INSCRITOS
 group by inscritos.fuente;
 --5ta pregunta.¿Qué día se inscribieron la mayor cantidad de personas y cuántas personas se inscribieron en ese día?
- select fecha , count(*) as fecha
-    from INSCRITOS
-group by inscritos.fecha;
+SELECT fecha, SUM (cantidad) AS mas_incritos_por_dia FROM inscritos GROUP BY fecha ORDER BY mas_incritos_por_dia DESC LIMIT 1;
